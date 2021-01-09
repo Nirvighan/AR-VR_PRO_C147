@@ -1,0 +1,26 @@
+<!--DEFINE HTML-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+
+        <a-scene background="color:white">
+            <!--LOAD THE MODEL-->
+            <a-assets timeout="10000">
+                <a-asset-item id="room" src="./room/scene.gltf"></a-asset-item> 
+            </a-assets>
+
+            <!--GIVE LIGHT-->
+            <a-entity light = "type:ambient;intensity:0.5" ></a-entity>
+            <a-entity light = "type:directional;intensity:5;distance:50;decay:2;color:white" position = "0 18 20"></a-entity>
+            <a-entity>
+
+                <!--SHOW THE MODEL-->
+                <a-entity position=" 0 0 -5" rotation="0 0 0" scale="1 1 1" gltf-model="#room" shadow="cast: true;">
+                </a-entity>
+              </a-entity>
+        </a-scene>
+    </body>
+</html>
